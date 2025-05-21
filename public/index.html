@@ -19,10 +19,10 @@
         
         <div id="loading">Searching for apps...</div>
         
+        <!-- Current Search Results -->
         <div id="results-container">
             <div class="results-header">
                 <h2>Search Results</h2>
-                <button id="download-csv">Download as CSV</button>
             </div>
             
             <table id="results-table">
@@ -40,10 +40,46 @@
             </table>
         </div>
         
+        <!-- "Search More" Prompt -->
+        <div id="search-more-container">
+            <div class="search-more-prompt">
+                <p>Would you like to add these apps to your collection and search for more?</p>
+                <div class="search-more-buttons">
+                    <button id="search-more-yes" class="search-more-button yes">Yes, search more</button>
+                    <button id="search-more-no" class="search-more-button no">No, finish search</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- All Accumulated Results -->
+        <div id="all-results-container">
+            <div class="results-header">
+                <h2>All Collected Apps (<span id="all-results-count">0</span>)</h2>
+                <div class="action-buttons">
+                    <button id="clear-all-results" class="secondary-button">Clear All</button>
+                    <button id="download-csv" class="primary-button">Download as CSV</button>
+                </div>
+            </div>
+            
+            <table id="all-results-table">
+                <thead>
+                    <tr>
+                        <th>App Name</th>
+                        <th>App Store URL</th>
+                        <th>App Bundle ID</th>
+                        <th>Publisher</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="all-results-body">
+                    <!-- All accumulated results will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+        
         <div class="footer">
             <p>This tool uses the iTunes Search API to find iOS app information.</p>
-            <p>Enter an app name and click Search to find matching apps.</p>
-            <p>Click "Download as CSV" to export the results.</p>
+            <p>Search for multiple apps and download all results as a single CSV file.</p>
         </div>
     </div>
     

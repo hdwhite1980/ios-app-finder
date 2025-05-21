@@ -81,10 +81,13 @@ h1 {
     margin-bottom: 15px;
 }
 
-#download-csv {
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.primary-button, .secondary-button, .remove-button {
     padding: 8px 16px;
-    background-color: #34c759;
-    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -92,8 +95,33 @@ h1 {
     transition: background-color 0.2s;
 }
 
-#download-csv:hover {
+.primary-button {
+    background-color: #34c759;
+    color: white;
+}
+
+.primary-button:hover {
     background-color: #2bb14d;
+}
+
+.secondary-button {
+    background-color: #e5e5ea;
+    color: #333;
+}
+
+.secondary-button:hover {
+    background-color: #d1d1d6;
+}
+
+.remove-button {
+    background-color: #ff3b30;
+    color: white;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+.remove-button:hover {
+    background-color: #e02d22;
 }
 
 table {
@@ -132,9 +160,18 @@ a:hover {
     text-decoration: underline;
 }
 
-#results-container {
+#results-container, #search-more-container, #all-results-container {
     display: none;
     margin-bottom: 30px;
+}
+
+/* Add some spacing between sections */
+#results-container {
+    margin-bottom: 0;
+}
+
+#search-more-container {
+    margin: 20px 0;
 }
 
 #loading {
@@ -161,6 +198,50 @@ a:hover {
     display: inline-block;
 }
 
+/* Search More Prompt Styles */
+.search-more-prompt {
+    background-color: #f5f5f7;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-more-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.search-more-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.search-more-button.yes {
+    background-color: #34c759;
+    color: white;
+}
+
+.search-more-button.yes:hover {
+    background-color: #2bb14d;
+}
+
+.search-more-button.no {
+    background-color: #007aff;
+    color: white;
+}
+
+.search-more-button.no:hover {
+    background-color: #0066d6;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     .container {
         margin: 10px;
@@ -173,5 +254,15 @@ a:hover {
     
     .truncate {
         max-width: 200px;
+    }
+    
+    .search-more-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
 }
